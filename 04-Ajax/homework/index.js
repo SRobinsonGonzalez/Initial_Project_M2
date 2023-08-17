@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const lista = document.querySelector("#lista");
 const boton = document.querySelector("#boton");
 const URL = "http://localhost:5000"; // Mi URL base
@@ -58,7 +60,50 @@ const deleteFriend = () => {
             showDelete();
             showFriends();
         }
-    })
-}
+    });
+};
 
-deleteButton.addEventListener('click', deleteFriend)
+deleteButton.addEventListener('click', deleteFriend);
+
+//!__________________________________________________________________________________________________________________________________________
+/*
+$('#boton').on('click', (element) => {
+    let lista = $('#lista');
+    lista.empty();
+    $.get('http://localhost:5000/amigos', (response) => {
+        response.map(amigo => {
+            let elementHTML = document.createElement('li');
+            elementHTML.innerText = `${amigo.name} es tu amigo numero: ${amigo.id}`;
+            lista.appendChild(elementHTML);
+        });
+    });
+});
+
+$('#search').on('click', () => {
+    let id = $('#input').val();
+    id.empty();
+    if (id) {
+        $.get(`http://localhost:5000/amigos/${id}`, (response) => {
+            $('#amigo').html(`Nombre: ${response.name}`)
+        });
+    } else {
+        return $('#amigo').html('Insertar un id');
+    }
+});
+
+$('#delete').on('click', () => {
+    let id = document.querySelector('#inputDelete').value;
+    id = '';
+    if (id) {
+        $.ajax({
+            type: 'DELETE',
+            url: `http://localhost:5000/amigos/${id}`,
+            success: () => {
+                $('#success').html('Tu amigo fue eliminado con exito');
+            }
+        });
+    } else {
+        $('#success').html('Insertar un id');
+    }
+})
+*/
