@@ -6,3 +6,5 @@ export default function SearchBar(onSearch) {
       </div>
    );
 }
+
+// comentario
