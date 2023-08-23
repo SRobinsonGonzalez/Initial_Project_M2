@@ -1,19 +1,18 @@
 import Card from './Card';
 
-export default function Cards({ characters }) {
-
+export default function Cards({ characters, onClose }) {
    return (
       <div>
-         {characters.map((characters) => (
+         {characters.map((character) => (
             <Card
-               key={characters.id}
-               name={characters.name}
-               status={characters.status}
-               species={characters.species}
-               gender={characters.gender}
-               origin={characters.origin.name}
-               image={characters.image}
-               onClose={() => window.alert('Emulamos que se cierra la card')}
+               key={character.id}
+               name={character.name}
+               status={character.status}
+               species={character.species}
+               gender={character.gender}
+               origin={character.origin.name}
+               image={character.image}
+               onClose={onClose}
             />
          ))}
       </div>
