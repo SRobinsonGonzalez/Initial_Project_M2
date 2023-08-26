@@ -1,8 +1,16 @@
 import React from "react";
 import styles from "./CardDetail.module.css";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 export default function CardDetail() {
+
+  const { id } = useParams()
+  const navigate = useNavigate()
+
+  const backToHome = () => {
+    navigate("/");
+  }
 
   const [cruiseDetail, setCruiseDetail] = React.useState({});
   React.useEffect(() => {
@@ -19,7 +27,7 @@ export default function CardDetail() {
 
   return (
     <div className={styles.container}>
-      <button className={styles.buttonBack}>
+      <button className={styles.buttonBack} onClick={backToHome}>
         Volver
       </button>
 
