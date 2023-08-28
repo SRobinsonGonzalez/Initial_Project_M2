@@ -46,11 +46,11 @@ export default function Contact() {
         email: '',
         message: ''
       });
-      setErrors({
+      setErrors(validate({
         name: '',
         email: '',
         message: ''
-      });
+      }));
     } else {
       alert ('Debe llenar todos los campos')
     }
